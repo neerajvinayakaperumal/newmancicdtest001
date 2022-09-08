@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "dc034375-0b0e-49b1-8498-0e8cb3ef2f04",
+		"name": "Yahoo_finance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19160576"
+	},
+	"item": [
+		{
+			"name": "Yahoo API correct request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://query1.finance.yahoo.com/v11/finance/quoteSummary/aapl?modules=financialData",
+					"protocol": "https",
+					"host": [
+						"query1",
+						"finance",
+						"yahoo",
+						"com"
+					],
+					"path": [
+						"v11",
+						"finance",
+						"quoteSummary",
+						"aapl"
+					],
+					"query": [
+						{
+							"key": "modules",
+							"value": "financialData"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Yahoo API correct Incorrect request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://query1.finance.yahoo.com/v11/finance/quoteSummary/aapl?modules=incorretData",
+					"protocol": "https",
+					"host": [
+						"query1",
+						"finance",
+						"yahoo",
+						"com"
+					],
+					"path": [
+						"v11",
+						"finance",
+						"quoteSummary",
+						"aapl"
+					],
+					"query": [
+						{
+							"key": "modules",
+							"value": "incorretData"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
